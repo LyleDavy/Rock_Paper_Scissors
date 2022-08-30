@@ -4,8 +4,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-let question = prompt('Rock, Paper, or Scissors?');
-let playerSelection = question.toLowerCase();
+
 let computerSelection = getComputerChoice();
 let playerScore = parseInt(0);
 let computerScore = parseInt(0);
@@ -28,6 +27,7 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
+/* remove for logic thst plays exactly 5 rounds
 function game() {
     for (let i = 0; i < 5; i++) {
         let question = prompt('Rock, Paper, or Scissors?');
@@ -37,3 +37,20 @@ function game() {
     }
     return(`Player Score: ${playerScore}        Computer Score: ${computerScore}`)
 }
+*/
+
+const rock = document.getElementById("rockBtn");
+rock.addEventListener('click', () => {
+    console.log(playRound('rock', computerSelection));
+});
+
+const paper = document.querySelector("#paperBtn");
+paper.addEventListener('click', () => {
+    console.log(playRound('paper', computerSelection))
+});
+
+const scissors = document.getElementById('scissorsBtn');
+scissors.addEventListener('click', () => {
+    console.log(playRound('scissors', computerSelection))
+});
+    
