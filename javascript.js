@@ -11,19 +11,29 @@ let computerScore = parseInt(0);
 
 function playRound(playerSelection,computerSelection) {
     if (playerSelection == computerSelection) {
-        return(`It's a tie! The computer picked ${computerSelection}`)
+        let tie = document.createElement('div');
+        tie.textContent = `It's a tie! The computer picked ${computerSelection}`;
+        roundResult.append(tie);
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         playerScore++;
-        return('You win! Rock beats scissors.')
+        let winRock = document.createElement('div');
+        winRock.textContent = 'You win! Rock beats scissors.';
+        roundResult.append(winRock);
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         playerScore++;
-        return('You win! Paper beats rock.')
+        let winPaper = document.createElement('div');
+        winPaper.textContent = 'You win! Paper beats rock.';
+        roundResult.append(winPaper);
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         playerScore++;
-        return('You win! Scissors beats paper.');
+        let winScissors = document.createElement('div');
+        winScissors.textContent = 'You win! Scissors beats paper.';
+        roundResult.append(winScissors)
     } else {
         computerScore++;
-        return(`You lose! ${computerSelection} beats ${playerSelection}.`)
+        let lose = document.createElement('div');
+        lose.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
+        roundResult.append(lose);
     }
 }
 
