@@ -4,7 +4,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-
 let computerSelection = getComputerChoice();
 let playerScore = parseInt(0);
 let computerScore = parseInt(0);
@@ -19,21 +18,33 @@ function playRound(playerSelection,computerSelection) {
         let winRock = document.createElement('div');
         winRock.textContent = 'You win! Rock beats scissors.';
         roundResult.append(winRock);
+        document.getElementById('playerCount');
+        playerCount.textContent = "";
+        playerCount.append(playerScore);
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         playerScore++;
         let winPaper = document.createElement('div');
         winPaper.textContent = 'You win! Paper beats rock.';
         roundResult.append(winPaper);
+        document.getElementById('playerCount');
+        playerCount.textContent = "";
+        playerCount.append(playerScore);
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         playerScore++;
         let winScissors = document.createElement('div');
         winScissors.textContent = 'You win! Scissors beats paper.';
-        roundResult.append(winScissors)
+        roundResult.append(winScissors);
+        document.getElementById('playerCount');
+        playerCount.textContent = "";
+        playerCount.append(playerScore);
     } else {
         computerScore++;
         let lose = document.createElement('div');
         lose.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
         roundResult.append(lose);
+        document.getElementById('computerCount');
+        computerCount.textContent = "";
+        computerCount.append(computerScore);
     }
 }
 
@@ -51,16 +62,16 @@ function game() {
 
 const rock = document.getElementById("rockBtn");
 rock.addEventListener('click', () => {
-    console.log(playRound('rock', computerSelection));
+    (playRound('rock', computerSelection));
 });
 
 const paper = document.querySelector("#paperBtn");
 paper.addEventListener('click', () => {
-    console.log(playRound('paper', computerSelection))
+    (playRound('paper', computerSelection))
 });
 
 const scissors = document.getElementById('scissorsBtn');
 scissors.addEventListener('click', () => {
-    console.log(playRound('scissors', computerSelection))
+    (playRound('scissors', computerSelection))
 });
     
