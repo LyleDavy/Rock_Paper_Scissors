@@ -48,6 +48,8 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
+// make score count into function to reduce mess? //
+
 /* remove for logic thst plays exactly 5 rounds
 function game() {
     for (let i = 0; i < 5; i++) {
@@ -63,15 +65,18 @@ function game() {
 const rock = document.getElementById("rockBtn");
 rock.addEventListener('click', () => {
     (playRound('rock', computerSelection));
+    computerSelection = getComputerChoice();
 });
 
 const paper = document.querySelector("#paperBtn");
 paper.addEventListener('click', () => {
-    (playRound('paper', computerSelection))
+    (playRound('paper', computerSelection));
+    computerSelection = getComputerChoice();
 });
 
 const scissors = document.getElementById('scissorsBtn');
 scissors.addEventListener('click', () => {
-    (playRound('scissors', computerSelection))
+    (playRound('scissors', computerSelection));
+    computerSelection = getComputerChoice();
 });
     
