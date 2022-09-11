@@ -13,6 +13,7 @@ function playRound(playerSelection,computerSelection) {
         let tie = document.createElement('div');
         tie.textContent = `It's a tie! The computer picked ${computerSelection}`;
         roundResult.append(tie);
+        gameOver();
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         playerScore++;
         let winRock = document.createElement('div');
@@ -21,6 +22,7 @@ function playRound(playerSelection,computerSelection) {
         document.getElementById('playerCount');
         playerCount.textContent = "";
         playerCount.append(playerScore);
+        gameOver();
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         playerScore++;
         let winPaper = document.createElement('div');
@@ -29,6 +31,7 @@ function playRound(playerSelection,computerSelection) {
         document.getElementById('playerCount');
         playerCount.textContent = "";
         playerCount.append(playerScore);
+        gameOver();
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         playerScore++;
         let winScissors = document.createElement('div');
@@ -37,6 +40,7 @@ function playRound(playerSelection,computerSelection) {
         document.getElementById('playerCount');
         playerCount.textContent = "";
         playerCount.append(playerScore);
+        gameOver();
     } else {
         computerScore++;
         let lose = document.createElement('div');
@@ -45,6 +49,16 @@ function playRound(playerSelection,computerSelection) {
         document.getElementById('computerCount');
         computerCount.textContent = "";
         computerCount.append(computerScore);
+        gameOver();
+    }
+}
+function gameOver() {
+    document.getElementById('winner')
+    if (playerScore === 5) {
+        winner.append('Player wins!');
+    }
+    else if (computerScore === 5) {
+        winner.append('Computer wins!')
     }
 }
 
